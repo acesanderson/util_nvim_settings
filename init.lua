@@ -1,8 +1,12 @@
-require("lazy-setup")
-vim.cmd.colorscheme "catppuccin-mocha"
 
 -- Set the leader key
 vim.g.mapleader = " "
+
+-- Lazy loads all our plugins (see lazy-setup.lua)
+require("lazy-setup")
+-- Set the colorscheme
+vim.cmd.colorscheme "catppuccin-mocha"
+
 -- Telescope keybindings
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
@@ -86,7 +90,7 @@ require('mason').setup({})
 require('mason-lspconfig').setup({
   -- Replace the language servers listed here 
   -- with the ones you want to install
-  ensure_installed = {'pyright', 'bashls','html','dockerls','jsonls','cssls','yamlls','lua_ls'},
+  ensure_installed = {'pyright', 'bashls','html','dockerls','jsonls','cssls','yamlls'},
   handlers = {
     function(server_name)
       require('lspconfig')[server_name].setup({})
@@ -109,3 +113,19 @@ cmp.setup({
   },
   mapping = cmp.mapping.preset.insert({}),
 })
+
+-- Run Black on save for Python files
+return {
+  -- https://github.com/psf/black
+  'psf/black',
+  ft = 'python',
+  config = function()
+    -- Automatically format file buffer when saving
+    vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+      pattern = "*.py",
+      callback = function()
+        vim.cmd("Black")
+      end,
+    })
+  end
+}
