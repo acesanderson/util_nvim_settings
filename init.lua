@@ -1,3 +1,5 @@
+vim.wo.number = true
+vim.wo.relativenumber = true
 
 -- Set the leader key
 vim.g.mapleader = " "
