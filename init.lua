@@ -7,8 +7,11 @@ vim.g.mapleader = " "
 -- Lazy loads all our plugins (see lazy-setup.lua)
 require("lazy-setup")
 -- Set the colorscheme
--- vim.cmd.colorscheme "catppuccin-mocha"
-vim.cmd.colorscheme "tokyonight-storm"
+vim.cmd.colorscheme "catppuccin-mocha"
+-- vim.cmd.colorscheme "tokyonight-storm"
+-- vim.cmd.colorscheme "tokyonight-night"
+-- vim.cmd.colorscheme "tokyonight-moon"
+
 
 -- Telescope keybindings
 local builtin = require('telescope.builtin')

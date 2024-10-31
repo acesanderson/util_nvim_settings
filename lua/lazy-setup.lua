@@ -25,6 +25,7 @@ require("lazy").setup({
   { "hrsh7th/nvim-cmp" },
   { "williamboman/mason.nvim" },
   { "williamboman/mason-lspconfig.nvim" },
+  { "bling/vim-bufferline" },
   -- Import all plugin configs I have in plugins folder
   { import = "plugins" }
 })
