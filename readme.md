@@ -9,4 +9,4 @@
 - github copilot
 - yank to system clipboard
 - run Black PEP8 linter on python files on save
-
+- alpha.nvim for startup screen

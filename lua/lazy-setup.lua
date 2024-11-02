@@ -27,6 +27,13 @@ require("lazy").setup({
   { "williamboman/mason-lspconfig.nvim" },
   { "bling/vim-bufferline" },
   -- Import all plugin configs I have in plugins folder
-  { import = "plugins" }
+  { import = "plugins" },
+  {
+    'goolord/alpha-nvim',
+    dependencies = { 'echasnovski/mini.icons' },
+    config = function ()
+        require'alpha'.setup(require'alpha.themes.startify'.config)
+    end
+};
 })
 

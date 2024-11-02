@@ -11,7 +11,8 @@ vim.cmd.colorscheme "catppuccin-mocha"
 -- vim.cmd.colorscheme "tokyonight-storm"
 -- vim.cmd.colorscheme "tokyonight-night"
 -- vim.cmd.colorscheme "tokyonight-moon"
-
+-- ~/.config/nvim/init.lua
+-- This is the startup page plugin
 
 -- Telescope keybindings
 local builtin = require('telescope.builtin')
@@ -96,7 +97,7 @@ require('mason').setup({})
 require('mason-lspconfig').setup({
   -- Replace the language servers listed here 
   -- with the ones you want to install
-  ensure_installed = {'pyright', 'bashls','html','dockerls','jsonls','cssls','yamlls'},
+  ensure_installed = {'pyright', 'bashls','html','dockerls','jsonls','cssls','yamlls', 'lua_ls'},
   handlers = {
     function(server_name)
       require('lspconfig')[server_name].setup({})
