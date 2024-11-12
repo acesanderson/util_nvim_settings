@@ -21,6 +21,18 @@ vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live gr
 vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
 
+-- Setting up keybindings for the leader key
+-- Example: vim.keymap.set('n', '<leader>/', '/\\v', { noremap = true })
+
+-- Create abbreviation for substitute command
+-- This allows us to effectively use "very magic" (i.e. perlesque regex) in find/replace in command mode
+vim.cmd([[
+  cabbrev %s/ %s/\v
+  cabbrev %s? %s?\v
+  cabbrev s/ s/\v
+  cabbrev s? s?\v
+]])
+
 
 -- We want to be able to use system clipboard in nvim, both for copy and paste
 vim.opt.clipboard = "unnamedplus"
