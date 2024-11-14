@@ -33,8 +33,21 @@ vim.cmd([[
   cabbrev s? s?\v
 ]])
 
+-- Shortcut to run Python files -- this is a simple way to run Python files in a floating terminal
+-- We have toggleterm installed, so you likely will more often want to use <ctrl>+\ to open a terminal instead
+function _G.run_python_file()
+    local file = vim.fn.expand('%')
+    local Terminal = require('toggleterm.terminal').Terminal
+    local python_term = Terminal:new({
+        cmd = "python3 " .. file,
+        direction = "float",
+        size = 50,
+        close_on_exit = false
+    })
+    python_term:toggle()
+end
 
--- We want to be able to use system clipboard in nvim, both for copy and paste
+vim.keymap.set('n', '<leader>r', ':lua run_python_file()<CR>', {noremap = true, silent = true})-- We want to be able to use system clipboard in nvim, both for copy and paste
 vim.opt.clipboard = "unnamedplus"
 
 
