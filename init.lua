@@ -21,8 +21,8 @@ vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live gr
 vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
 
--- Setting up keybindings for the leader key
--- Example: vim.keymap.set('n', '<leader>/', '/\\v', { noremap = true })
+-- Open Nvim Tree
+vim.keymap.set('n', '<leader>t', ':NvimTreeFindFileToggle<CR>', {noremap = true, silent = true})
 
 -- Create abbreviation for substitute command
 -- This allows us to effectively use "very magic" (i.e. perlesque regex) in find/replace in command mode
