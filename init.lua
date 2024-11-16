@@ -24,6 +24,9 @@ vim.cmd.colorscheme "catppuccin-mocha"
 -- Open Nvim Tree
 vim.keymap.set('n', '<leader>t', ':NvimTreeFindFileToggle<CR>', {noremap = true, silent = true})
 
+-- Pretty print json
+vim.keymap.set('n', '<leader>fj', ':%!jq .<CR>', { noremap = true, silent = true, desc = 'Format JSON' })
+
 -- Create abbreviation for substitute command
 -- This allows us to effectively use "very magic" (i.e. perlesque regex) in find/replace in command mode
 vim.cmd([[
