@@ -33,11 +33,14 @@ vim.o.background = "dark"
 -- vim.cmd("colorscheme rose-pine")
 -- vim.cmd("colorscheme rose-pine-dawn")
 -- vim.cmd("colorscheme rose-pine-moon")
-vim.cmd("colorscheme doom-one")
+-- vim.cmd("colorscheme doom-one")
 -- vim.cmd("colorscheme oxocarbon")
 -- vim.cmd("colorscheme apprentice")
 -- vim.cmd("colorscheme dracula")
 -- vim.cmd("colorscheme papercolor")
+-- vim.cmd("colorscheme monokai")
+-- vim.cmd("colorscheme oceanicnext")
+vim.cmd("colorscheme solarized")
 
 -- Open Nvim Tree
 vim.keymap.set("n", "<leader>t", ":NvimTreeFindFileToggle<CR>", { noremap = true, silent = true })
