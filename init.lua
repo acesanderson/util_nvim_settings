@@ -16,20 +16,20 @@ require("lazy-setup")
 -- vim.cmd.colorscheme "catppuccin-latte"
 -- vim.cmd.colorscheme "catppuccin-frappe"
 -- vim.cmd.colorscheme "catppuccin-macchiato"
--- vim.cmd.colorscheme "catppuccin-mocha"
+vim.cmd.colorscheme "catppuccin-mocha"
 -- vim.cmd.colorscheme "tokyonight-storm"
 -- vim.cmd.colorscheme "tokyonight-night"
 -- vim.cmd.colorscheme "tokyonight-moon"
 -- vim.cmd("colorscheme kanagawa")
 -- vim.cmd("colorscheme gruvbox")
--- vim.cmd("colorscheme Nightfox")
--- vim.cmd("colorscheme Dayfox")
--- vim.cmd("colorscheme Dawnfox")
--- vim.cmd("colorscheme Duskfox")
-vim.cmd("colorscheme Nordfox")
--- vim.cmd("colorscheme Terafox")
--- vim.cmd("colorscheme Carbonfox")
--- vim.cmd("colorscheme Sonokai")
+-- vim.cmd("colorscheme nightfox")
+-- vim.cmd("colorscheme dayfox")
+-- vim.cmd("colorscheme dawnfox")
+-- vim.cmd("colorscheme duskfox")
+-- vim.cmd("colorscheme nordfox")
+-- vim.cmd("colorscheme terafox")
+-- vim.cmd("colorscheme carbonfox")
+-- vim.cmd("colorscheme sonokai")
 
 -- Open Nvim Tree
 vim.keymap.set("n", "<leader>t", ":NvimTreeFindFileToggle<CR>", { noremap = true, silent = true })
