@@ -29,5 +29,32 @@ return {
        vim.cmd('colorscheme tokyonight')  -- Set color scheme when loaded
      end,
    },
+   {
+     'EdenEast/nightfox.nvim',
+     cmd = 'Nightfox',
+     config = function()
+       vim.cmd('colorscheme nightfox')
+     end,
+   },
+   {
+     'ellisonleao/gruvbox.nvim',
+     cmd = 'Gruvbox',
+     config = function()
+       vim.cmd('colorscheme gruvbox')
+     end,
+   },
+   {
+     'savq/melange-nvim',
+     cmd = 'Melange',
+     config = function()
+       vim.cmd('colorscheme melange')
+     end,
+   },
+   {
+     'sainnhe/sonokai',
+     cmd = 'Sonokai',
+     config = function()
+       vim.cmd('colorscheme sonokai')
+     end,
+   },
 }
-

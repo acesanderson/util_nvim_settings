@@ -7,12 +7,31 @@ vim.g.mapleader = " "
 -- Lazy loads all our plugins (see lazy-setup.lua)
 require("lazy-setup")
 
+-- Specific background if you want to set it
+-- vim.o.background = "dark"
+-- vim.o.background = "light"
+
 -- Set the colorscheme
 -- vim.cmd.colorscheme "catppuccin-mocha"
+-- vim.cmd.colorscheme "catppuccin-latte"
+-- vim.cmd.colorscheme "catppuccin-frappe"
+-- vim.cmd.colorscheme "catppuccin-macchiato"
+-- vim.cmd.colorscheme "catppuccin-mocha"
 -- vim.cmd.colorscheme "tokyonight-storm"
-vim.cmd.colorscheme "tokyonight-night"
+-- vim.cmd.colorscheme "tokyonight-night"
 -- vim.cmd.colorscheme "tokyonight-moon"
 -- vim.cmd("colorscheme kanagawa")
+-- vim.cmd("colorscheme gruvbox")
+-- vim.cmd("colorscheme Nightfox")
+-- vim.cmd("colorscheme Dayfox")
+-- vim.cmd("colorscheme Dawnfox")
+-- vim.cmd("colorscheme Duskfox")
+vim.cmd("colorscheme Nordfox")
+-- vim.cmd("colorscheme Terafox")
+-- vim.cmd("colorscheme Carbonfox")
+-- vim.cmd("colorscheme Sonokai")
+
+
 
 -- Open Nvim Tree
 vim.keymap.set('n', '<leader>t', ':NvimTreeFindFileToggle<CR>', {noremap = true, silent = true})
