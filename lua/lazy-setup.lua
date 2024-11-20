@@ -12,14 +12,13 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-  { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+  -- { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
   { "rebelot/kanagawa.nvim" },
   { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
-  { "folke/tokyonight.nvim" },
+  -- { "folke/tokyonight.nvim" },
   { "github/copilot.vim" },
   { "psf/black", branch = "stable" },
   { "nvim-tree/nvim-tree.lua" },
---  { "nvim-telescope/telescope.nvim", tag = '0.1.8', dependencies = { 'nvim-lua/plenary.nvim' }},
   { "VonHeikemen/lsp-zero.nvim", branch = 'v4.x'},
   { "neovim/nvim-lspconfig" },
   { "hrsh7th/cmp-nvim-lsp" },
