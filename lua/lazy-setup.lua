@@ -17,13 +17,10 @@ require("lazy").setup({
   -- { "folke/tokyonight.nvim" },
   { "github/copilot.vim" },
   { "psf/black", branch = "stable" },
-  { "nvim-tree/nvim-tree.lua" },
   { "VonHeikemen/lsp-zero.nvim", branch = 'v4.x'},
   { "neovim/nvim-lspconfig" },
   { "hrsh7th/cmp-nvim-lsp" },
   { "hrsh7th/nvim-cmp" },
-  -- { "williamboman/mason.nvim" },
-  -- { "williamboman/mason-lspconfig.nvim" },
   { "bling/vim-bufferline" },
   -- Import all plugin configs I have in plugins folder
   { import = "plugins" },
