@@ -12,14 +12,14 @@ require("lazy-setup")
 -- vim.o.background = "light"
 
 -- Set the colorscheme
--- vim.cmd.colorscheme "catppuccin-mocha"
+-- vim.cmd.colorscheme("catppuccin-mocha")
 -- vim.cmd.colorscheme "catppuccin-latte"
 -- vim.cmd.colorscheme "catppuccin-frappe"
 -- vim.cmd.colorscheme "catppuccin-macchiato"
-vim.cmd.colorscheme "catppuccin-mocha"
+-- vim.cmd.colorscheme "catppuccin-mocha"
 -- vim.cmd.colorscheme "tokyonight-storm"
--- vim.cmd.colorscheme "tokyonight-night"
--- vim.cmd.colorscheme "tokyonight-moon"
+-- vim.cmd.colorscheme("tokyonight-night")
+-- vim.cmd.colorscheme("tokyonight-moon")
 -- vim.cmd("colorscheme kanagawa")
 -- vim.cmd("colorscheme gruvbox")
 -- vim.cmd("colorscheme nightfox")
@@ -30,6 +30,12 @@ vim.cmd.colorscheme "catppuccin-mocha"
 -- vim.cmd("colorscheme terafox")
 -- vim.cmd("colorscheme carbonfox")
 -- vim.cmd("colorscheme sonokai")
+-- vim.cmd("colorscheme rose-pine")
+vim.cmd("colorscheme rose-pine-dawn")
+-- vim.cmd("colorscheme oxocarbon")
+-- vim.cmd("colorscheme apprentice")
+-- vim.cmd("colorscheme dracula")
+-- vim.cmd("colorscheme papercolor")
 
 -- Open Nvim Tree
 vim.keymap.set("n", "<leader>t", ":NvimTreeFindFileToggle<CR>", { noremap = true, silent = true })

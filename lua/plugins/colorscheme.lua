@@ -55,4 +55,39 @@ return {
 			vim.cmd("colorscheme sonokai")
 		end,
 	},
+	{
+		"rose-pine/neovim",
+		name = "rose-pine",
+		config = function()
+			vim.cmd("colorscheme rose-pine")
+		end,
+	},
+	{
+		"nyoom-engineering/oxocarbon.nvim",
+		cmd = "Oxocarbon",
+		config = function()
+			vim.cmd("colorscheme oxocarbon")
+		end,
+	},
+	{
+		"romainl/Apprentice",
+		cmd = "Apprentice",
+		config = function()
+			vim.cmd("colorscheme apprentice")
+		end,
+	},
+	{
+		"Mofiqul/dracula.nvim",
+		cmd = "Dracula",
+		config = function()
+			vim.cmd("colorscheme dracula")
+		end,
+	},
+	{
+		"NLKNguyen/papercolor-theme",
+		cmd = "PaperColor",
+		config = function()
+			vim.cmd("colorscheme PaperColor")
+		end,
+	},
 }
