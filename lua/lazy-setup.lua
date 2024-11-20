@@ -13,13 +13,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
   { "github/copilot.vim" },
-  -- { "psf/black", branch = "stable" },
-  -- { "VonHeikemen/lsp-zero.nvim", branch = 'v4.x'},
-  -- { "neovim/nvim-lspconfig" },
-  -- { "hrsh7th/cmp-nvim-lsp" },
-  -- { "hrsh7th/nvim-cmp" },
   { "bling/vim-bufferline" },
-  -- Import all plugin configs I have in plugins folder
   { import = "plugins" },
   {
     'goolord/alpha-nvim',
