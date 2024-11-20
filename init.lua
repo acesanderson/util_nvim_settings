@@ -8,7 +8,7 @@ vim.g.mapleader = " "
 require("lazy-setup")
 
 -- Specific background if you want to set it
--- vim.o.background = "dark"
+vim.o.background = "dark"
 -- vim.o.background = "light"
 
 -- Set the colorscheme
@@ -31,7 +31,9 @@ require("lazy-setup")
 -- vim.cmd("colorscheme carbonfox")
 -- vim.cmd("colorscheme sonokai")
 -- vim.cmd("colorscheme rose-pine")
-vim.cmd("colorscheme rose-pine-dawn")
+-- vim.cmd("colorscheme rose-pine-dawn")
+-- vim.cmd("colorscheme rose-pine-moon")
+vim.cmd("colorscheme doom-one")
 -- vim.cmd("colorscheme oxocarbon")
 -- vim.cmd("colorscheme apprentice")
 -- vim.cmd("colorscheme dracula")

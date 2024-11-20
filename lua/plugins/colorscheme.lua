@@ -90,4 +90,11 @@ return {
 			vim.cmd("colorscheme PaperColor")
 		end,
 	},
+	{
+		"NTBBloodbath/doom-one.nvim",
+		cmd = "DoomOne",
+		config = function()
+			vim.cmd("colorscheme doom-one")
+		end,
+	},
 }
