@@ -90,4 +90,32 @@ return {
 			vim.cmd("colorscheme PaperColor")
 		end,
 	},
+	{
+		"NTBBloodbath/doom-one.nvim",
+		cmd = "DoomOne",
+		config = function()
+			vim.cmd("colorscheme doom-one")
+		end,
+	},
+	{
+		"tanvirtin/monokai.nvim",
+		cmd = "Monokai",
+		config = function()
+			vim.cmd("colorscheme monokai")
+		end,
+	},
+	{
+		"mhartington/oceanic-next",
+		cmd = "OceanicNext",
+		config = function()
+			vim.cmd("colorscheme OceanicNext")
+		end,
+	},
+	{
+		"shaunsingh/solarized.nvim",
+		cmd = "Solarized",
+		config = function()
+			vim.cmd("colorscheme solarized")
+		end,
+	},
 }
