@@ -32,6 +32,7 @@ vim.o.background = "dark"
 -- vim.cmd("colorscheme carbonfox")
 -- vim.cmd("colorscheme sonokai")
 -- vim.cmd("colorscheme rose-pine")
+vim.cmd("colorscheme rose-pine-moon")
 -- vim.cmd("colorscheme rose-pine-dawn")
 -- vim.cmd("colorscheme rose-pine-moon")
 vim.cmd("colorscheme doom-one")
