@@ -3,6 +3,7 @@ vim.wo.relativenumber = true
 
 -- Set the leader key
 vim.g.mapleader = " "
+vim.opt.conceallevel = 1
 
 -- Lazy loads all our plugins (see lazy-setup.lua)
 require("lazy-setup")
@@ -94,16 +95,3 @@ vim.api.nvim_create_autocmd("BufWritePost", { -- Changed from BufWritePre to Buf
 		vim.cmd("e!") -- reload the file
 	end,
 })
-
--- Here are our nvim-tree options:
--- disable netrw at the very start of your init.lua
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
-
--- optionally enable 24-bit colour
-vim.opt.termguicolors = true
-
--- empty setup using defaults
-require("nvim-tree").setup()
-
-vim.opt.signcolumn = "yes" -- Reserve space in the gutter
