@@ -14,6 +14,8 @@ return {
 			"lua", -- for neovim config
 			"vimdoc", -- for help files
 			"vim", -- for .vim files
+			"markdown", -- for markdown, obsidian files
+			"markdown_inline", -- for markdown, obsidian files
 			"python", -- always load Python parser
 		},
 		-- Automatically install parsers when entering buffer
@@ -30,7 +32,6 @@ return {
 		local parser_mapping = {
 			javascript = { "javascript", "jsx" },
 			typescript = { "typescript", "tsx" },
-			markdown = { "markdown", "markdown_inline" },
 			yaml = { "yaml" },
 			json = { "json", "jsonc" },
 			html = { "html" },

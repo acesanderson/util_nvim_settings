@@ -3,6 +3,7 @@ vim.wo.relativenumber = true
 
 -- Set the leader key
 vim.g.mapleader = " "
+vim.opt.conceallevel = 1
 
 -- Lazy loads all our plugins (see lazy-setup.lua)
 require("lazy-setup")
@@ -33,14 +34,14 @@ vim.o.background = "dark"
 -- vim.cmd("colorscheme rose-pine")
 -- vim.cmd("colorscheme rose-pine-dawn")
 -- vim.cmd("colorscheme rose-pine-moon")
--- vim.cmd("colorscheme doom-one")
+vim.cmd("colorscheme doom-one")
 -- vim.cmd("colorscheme oxocarbon")
 -- vim.cmd("colorscheme apprentice")
 -- vim.cmd("colorscheme dracula")
 -- vim.cmd("colorscheme papercolor")
 -- vim.cmd("colorscheme monokai")
 -- vim.cmd("colorscheme oceanicnext")
-vim.cmd("colorscheme solarized")
+-- vim.cmd("colorscheme solarized")
 
 -- Open Nvim Tree
 vim.keymap.set("n", "<leader>t", ":NvimTreeFindFileToggle<CR>", { noremap = true, silent = true })
