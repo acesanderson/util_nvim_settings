@@ -20,5 +20,8 @@ return {
 				path = vault_path,
 			},
 		},
+		follow_url_func = function(url)
+			vim.inspect(vim.system({ "open", url }))
+		end,
 	},
 }
