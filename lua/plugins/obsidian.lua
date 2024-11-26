@@ -25,4 +25,6 @@ if vault_path then
 			end,
 		},
 	}
+else
+	return {}
 end
