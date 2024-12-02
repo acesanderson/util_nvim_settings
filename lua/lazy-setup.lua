@@ -10,20 +10,34 @@ if not vim.loop.fs_stat(lazypath) then
 	})
 end
 vim.opt.rtp:prepend(lazypath)
-
 require("lazy").setup({
 	{
 		"folke/noice.nvim",
 		event = "VeryLazy",
 		opts = {
-			-- add any options here
+			-- Here we're moving the Noice configuration into the opts table
+			lsp = {
+				-- This section enhances how LSP documentation appears in your editor
+				override = {
+					-- Improves the conversion of LSP documentation to markdown
+					["vim.lsp.util.convert_input_to_markdown_lines"] = true,
+					-- Enhances how markdown is styled in the documentation window
+					["vim.lsp.util.stylize_markdown"] = true,
+					-- Makes completion documentation look better when using nvim-cmp
+					["cmp.entry.get_documentation"] = true,
+				},
+			},
+			-- You can uncomment these presets if you want additional features
+			-- presets = {
+			--     bottom_search = true,         -- Moves search bar to bottom of screen
+			--     command_palette = true,       -- Combines command line and popup menu
+			--     long_message_to_split = true, -- Opens long messages in a split
+			--     inc_rename = false,           -- Adds input dialog for incremental rename
+			--     lsp_doc_border = false,       -- Adds border around LSP documentation
+			-- },
 		},
 		dependencies = {
-			-- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
 			"MunifTanjim/nui.nvim",
-			-- OPTIONAL:
-			--   `nvim-notify` is only needed, if you want to use the notification view.
-			--   If not available, we use `mini` as the fallback
 			"rcarriga/nvim-notify",
 		},
 	},
