@@ -30,6 +30,7 @@ return {
 			jsonls = { filetypes = { "json", "jsonc" } },
 			cssls = { filetypes = { "css", "scss", "less" } },
 			yamlls = { filetypes = { "yaml", "yml" } },
+			sqlls = { filetypes = { "sql" } },
 		}
 
 		-- Setup mason-lspconfig
