@@ -118,4 +118,31 @@ return {
 			vim.cmd("colorscheme solarized")
 		end,
 	},
+    {
+        'HiPhish/rainbow-delimiters.nvim',
+        config = function()
+            -- Set up rainbow-delimiters
+            require('rainbow-delimiters.setup').setup()
+
+            -- Function to set rainbow highlights based on current colorscheme
+            local function set_rainbow_colors()
+                -- Link to common syntax groups that exist in most colorschemes
+                vim.api.nvim_set_hl(0, 'RainbowDelimiterRed', { link = 'Special' })
+                vim.api.nvim_set_hl(0, 'RainbowDelimiterYellow', { link = 'Function' })
+                vim.api.nvim_set_hl(0, 'RainbowDelimiterBlue', { link = 'String' })
+                vim.api.nvim_set_hl(0, 'RainbowDelimiterOrange', { link = 'Constant' })
+                vim.api.nvim_set_hl(0, 'RainbowDelimiterGreen', { link = 'Identifier' })
+                vim.api.nvim_set_hl(0, 'RainbowDelimiterViolet', { link = 'Statement' })
+                vim.api.nvim_set_hl(0, 'RainbowDelimiterCyan', { link = 'Type' })
+            end
+
+            -- Set colors initially
+            set_rainbow_colors()
+
+            -- Create an autocommand to update colors when colorscheme changes
+            vim.api.nvim_create_autocmd('ColorScheme', {
+                callback = set_rainbow_colors
+            })
+        end
+    },
 }
