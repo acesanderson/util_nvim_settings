@@ -21,7 +21,7 @@ vim.o.background = "dark"
 -- vim.cmd.colorscheme "tokyonight-storm"
 -- vim.cmd.colorscheme("tokyonight-night")
 -- vim.cmd.colorscheme("tokyonight-moon")
--- vim.cmd("colorscheme kanagawa")
+vim.cmd("colorscheme kanagawa")
 -- vim.cmd("colorscheme gruvbox")
 -- vim.cmd("colorscheme nightfox")
 -- vim.cmd("colorscheme dayfox")
@@ -35,7 +35,7 @@ vim.o.background = "dark"
 -- vim.cmd("colorscheme rose-pine-moon")
 -- vim.cmd("colorscheme rose-pine-dawn")
 -- vim.cmd("colorscheme rose-pine-moon")
-vim.cmd("colorscheme doom-one")
+-- vim.cmd("colorscheme doom-one")
 -- vim.cmd("colorscheme oxocarbon")
 -- vim.cmd("colorscheme apprentice")
 -- vim.cmd("colorscheme dracula")

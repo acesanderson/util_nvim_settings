@@ -41,6 +41,10 @@ require("lazy").setup({
 			"rcarriga/nvim-notify",
 		},
 	},
+	{
+		"folke/which-key.nvim",
+		event = "VeryLazy",
+	},
 	{ "github/copilot.vim" },
 	{ "bling/vim-bufferline" },
 	{ import = "plugins" },
