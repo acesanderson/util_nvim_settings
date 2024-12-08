@@ -12,9 +12,6 @@ require("lazy-setup")
 vim.o.background = "dark"
 -- vim.o.background = "light"
 
-vim.opt.termguicolors = true
-require("bufferline").setup({})
-
 -- Set the colorscheme
 -- vim.cmd.colorscheme("catppuccin-mocha")
 -- vim.cmd.colorscheme "catppuccin-latte"
@@ -98,3 +95,6 @@ vim.api.nvim_create_autocmd("BufWritePost", { -- Changed from BufWritePre to Buf
 		vim.cmd("e!") -- reload the file
 	end,
 })
+
+vim.opt.termguicolors = true
+require("bufferline").setup({})
