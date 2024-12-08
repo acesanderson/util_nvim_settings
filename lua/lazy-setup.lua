@@ -46,6 +46,8 @@ require("lazy").setup({
 		event = "VeryLazy",
 	},
 	{ "tpope/vim-dadbod" },
+	{ "kristijanhusak/vim-dadbod-ui" },
+	{ "kristijanhusak/vim-dadbod-completion" },
 	{ "github/copilot.vim" },
 	{ "bling/vim-bufferline" },
 	{ import = "plugins" },
