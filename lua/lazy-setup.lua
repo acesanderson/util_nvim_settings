@@ -49,7 +49,8 @@ require("lazy").setup({
 	{ "kristijanhusak/vim-dadbod-ui", cmd = "DBUI" },
 	{ "kristijanhusak/vim-dadbod-completion", cmd = "DBUI" },
 	{ "github/copilot.vim", event = "VeryLazy" },
-	{ "bling/vim-bufferline" },
+	-- { "bling/vim-bufferline" },
+	{ "akinsho/bufferline.nvim" },
 	{ import = "plugins" },
 	{
 		"goolord/alpha-nvim",

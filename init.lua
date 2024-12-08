@@ -12,11 +12,14 @@ require("lazy-setup")
 vim.o.background = "dark"
 -- vim.o.background = "light"
 
+vim.opt.termguicolors = true
+require("bufferline").setup({})
+
 -- Set the colorscheme
 -- vim.cmd.colorscheme("catppuccin-mocha")
 -- vim.cmd.colorscheme "catppuccin-latte"
 -- vim.cmd.colorscheme "catppuccin-frappe"
-vim.cmd.colorscheme "catppuccin-macchiato"
+vim.cmd.colorscheme("catppuccin-macchiato")
 -- vim.cmd.colorscheme "catppuccin-mocha"
 -- vim.cmd.colorscheme "tokyonight-storm"
 -- vim.cmd.colorscheme("tokyonight-night")
