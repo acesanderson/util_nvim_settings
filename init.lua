@@ -19,12 +19,12 @@ require("bufferline").setup({})
 -- vim.cmd.colorscheme("catppuccin-mocha")
 -- vim.cmd.colorscheme "catppuccin-latte"
 -- vim.cmd.colorscheme "catppuccin-frappe"
-vim.cmd.colorscheme("catppuccin-macchiato")
+-- vim.cmd.colorscheme("catppuccin-macchiato")
 -- vim.cmd.colorscheme "catppuccin-mocha"
 -- vim.cmd.colorscheme "tokyonight-storm"
 -- vim.cmd.colorscheme("tokyonight-night")
 -- vim.cmd.colorscheme("tokyonight-moon")
--- vim.cmd("colorscheme kanagawa")
+vim.cmd("colorscheme kanagawa")
 -- vim.cmd("colorscheme gruvbox")
 -- vim.cmd("colorscheme nightfox")
 -- vim.cmd("colorscheme dayfox")
