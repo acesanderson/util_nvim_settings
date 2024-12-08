@@ -1,6 +1,8 @@
 return {
 	"akinsho/toggleterm.nvim",
 	version = "*",
+	keys = { "<C-\\>" },
+	cmd = { "ToggleTerm", "TermExec" },
 	config = function()
 		require("toggleterm").setup({
 			size = 20,
