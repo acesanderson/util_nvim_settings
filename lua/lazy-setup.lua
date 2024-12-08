@@ -48,7 +48,7 @@ require("lazy").setup({
 	{ "tpope/vim-dadbod", cmd = "DBUI" },
 	{ "kristijanhusak/vim-dadbod-ui", cmd = "DBUI" },
 	{ "kristijanhusak/vim-dadbod-completion", cmd = "DBUI" },
-	{ "github/copilot.vim" },
+	{ "github/copilot.vim", event = "VeryLazy" },
 	{ "bling/vim-bufferline" },
 	{ import = "plugins" },
 	{
@@ -57,5 +57,32 @@ require("lazy").setup({
 		config = function()
 			require("alpha").setup(require("alpha.themes.startify").config)
 		end,
+	},
+	performance = {
+		cache = {
+			enabled = true,
+			-- Path where the cache is stored
+			path = vim.fn.stdpath("cache") .. "/lazy/cache",
+			-- What to cache:
+			config = true, -- Cache config files
+			data = true, -- Cache require() calls
+			reset_packpath = true, -- Reset packpath when loading cache
+		},
+		reset_packpath = true, -- Reset packpath when loading plugins
+		rtp = {
+			reset = true, -- Reset runtimepath when loading plugins
+			-- Paths that shouldn't be reset:
+			paths = {}, -- Add any custom paths here
+			disabled_plugins = {
+				-- "gzip",
+				-- "matchit",
+				-- "matchparen",
+				-- "netrwPlugin",
+				-- "tarPlugin",
+				-- "tohtml",
+				-- "tutor",
+				-- "zipPlugin",
+			},
+		},
 	},
 })
