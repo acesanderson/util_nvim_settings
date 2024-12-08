@@ -19,7 +19,7 @@ return {
 			"python", -- always load Python parser
 			"javascript",
 			"json",
-			"jsonc"
+			"jsonc",
 		},
 		-- Automatically install parsers when entering buffer
 		auto_install = false,

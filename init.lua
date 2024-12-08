@@ -5,6 +5,7 @@ vim.wo.relativenumber = true
 vim.g.mapleader = " "
 vim.opt.conceallevel = 1
 
+
 -- Lazy loads all our plugins (see lazy-setup.lua)
 require("lazy-setup")
 
