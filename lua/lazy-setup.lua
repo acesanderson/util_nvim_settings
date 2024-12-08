@@ -50,7 +50,7 @@ require("lazy").setup({
 	{ "kristijanhusak/vim-dadbod-completion", cmd = "DBUI" },
 	{ "github/copilot.vim", event = "VeryLazy" },
 	-- { "bling/vim-bufferline" },
-	{ "akinsho/bufferline.nvim" },
+	{ "akinsho/bufferline.nvim", event = "VeryLazy" },
 	{ import = "plugins" },
 	{
 		"goolord/alpha-nvim",
@@ -75,14 +75,14 @@ require("lazy").setup({
 			-- Paths that shouldn't be reset:
 			paths = {}, -- Add any custom paths here
 			disabled_plugins = {
-				-- "gzip",
-				-- "matchit",
-				-- "matchparen",
-				-- "netrwPlugin",
-				-- "tarPlugin",
-				-- "tohtml",
-				-- "tutor",
-				-- "zipPlugin",
+				"gzip",
+				"matchit",
+				"matchparen",
+				"netrwPlugin",
+				"tarPlugin",
+				"tohtml",
+				"tutor",
+				"zipPlugin",
 			},
 		},
 	},
