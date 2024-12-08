@@ -18,6 +18,8 @@ return {
 			"markdown_inline", -- for markdown, obsidian files
 			"python", -- always load Python parser
 			"javascript",
+			"json",
+			"jsonc"
 		},
 		-- Automatically install parsers when entering buffer
 		auto_install = false,
@@ -31,12 +33,10 @@ return {
 	config = function(_, opts)
 		-- Define filetype to parser mapping
 		local parser_mapping = {
-			javascript = { "javascript" },
 			javascriptreact = { "tsx" }, -- Add this line for JSX files
 			typescript = { "typescript", "tsx" },
 			typescriptreact = { "tsx" },
 			yaml = { "yaml" },
-			json = { "json", "jsonc" },
 			html = { "html" },
 			css = { "css" },
 			bash = { "bash" },

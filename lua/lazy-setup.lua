@@ -45,20 +45,29 @@ require("lazy").setup({
 		"folke/which-key.nvim",
 		event = "VeryLazy",
 	},
-	{ "tpope/vim-dadbod", cmd = "DBUI" },
-	{ "kristijanhusak/vim-dadbod-ui", cmd = "DBUI" },
-	{ "kristijanhusak/vim-dadbod-completion", cmd = "DBUI" },
+	{ "kristijanhusak/vim-dadbod-ui", 
+		dependencies = {
+			{ 'tpope/vim-dadbod', lazy = true },
+			{ 'kristijanhusak/vim-dadbod-completion', ft = { 'sql', 'mysql', 'plsql' }, lazy = true }, -- Optional
+		},
+		cmd = {
+		    'DBUI',
+		    'DBUIToggle',
+		    'DBUIAddConnection',
+		    'DBUIFindBuffer',
+		  },
+	},
 	{ "github/copilot.vim", event = "VeryLazy" },
 	-- { "bling/vim-bufferline" },
 	{ "akinsho/bufferline.nvim", event = "VeryLazy" },
 	{ import = "plugins" },
-	{
-		"goolord/alpha-nvim",
-		dependencies = { "echasnovski/mini.icons" },
-		config = function()
-			require("alpha").setup(require("alpha.themes.startify").config)
-		end,
-	},
+	-- {
+	-- 	"goolord/alpha-nvim",
+	-- 	dependencies = { "echasnovski/mini.icons" },
+	-- 	config = function()
+	-- 		require("alpha").setup(require("alpha.themes.startify").config)
+	-- 	end,
+	-- },
 	performance = {
 		cache = {
 			enabled = true,
