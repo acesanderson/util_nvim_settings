@@ -45,6 +45,7 @@ require("lazy").setup({
 		"folke/which-key.nvim",
 		event = "VeryLazy",
 	},
+	{ "tpope/vim-dadbod" },
 	{ "github/copilot.vim" },
 	{ "bling/vim-bufferline" },
 	{ import = "plugins" },
