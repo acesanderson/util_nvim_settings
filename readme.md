@@ -13,3 +13,6 @@
 
 more colorschemes
 lua linter (like Black)
+
+### Debugging
+- make sure the default lua is either lua5.1 or (more likely) luajit. NOT lua5.4

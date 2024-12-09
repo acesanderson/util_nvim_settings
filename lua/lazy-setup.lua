@@ -27,14 +27,6 @@ require("lazy").setup({
 					["cmp.entry.get_documentation"] = true,
 				},
 			},
-			-- You can uncomment these presets if you want additional features
-			-- presets = {
-			--     bottom_search = true,         -- Moves search bar to bottom of screen
-			--     command_palette = true,       -- Combines command line and popup menu
-			--     long_message_to_split = true, -- Opens long messages in a split
-			--     inc_rename = false,           -- Adds input dialog for incremental rename
-			--     lsp_doc_border = false,       -- Adds border around LSP documentation
-			-- },
 		},
 		dependencies = {
 			"MunifTanjim/nui.nvim",
@@ -45,7 +37,10 @@ require("lazy").setup({
 		"folke/which-key.nvim",
 		event = "VeryLazy",
 	},
-	-- { "rest-nvim/rest.nvim" },
+	{
+		"rest-nvim/rest.nvim",
+		cmd = { "Rest" },
+	},
 	{
 		"kristijanhusak/vim-dadbod-ui",
 		dependencies = {
