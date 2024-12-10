@@ -16,3 +16,4 @@ lua linter (like Black)
 
 ### Debugging
 - make sure the default lua is either lua5.1 or (more likely) luajit. NOT lua5.4
+- sudo apt remove luarocks && sudo apt install luajit && ln -s /usr/bin/luajit /usr/local/bin/lua
