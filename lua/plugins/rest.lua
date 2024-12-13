@@ -1,4 +1,4 @@
-return {
-	"rest-nvim/rest.nvim",
-	cmd = { "Rest" },
-}
+-- return {
+-- 	"rest-nvim/rest.nvim",
+-- 	cmd = { "Rest" },
+-- }
