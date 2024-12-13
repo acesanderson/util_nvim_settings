@@ -85,6 +85,9 @@ end
 vim.keymap.set("n", "<leader>r", ":lua run_python_file()<CR>", { noremap = true, silent = true }) -- We want to be able to use system clipboard in nvim, both for copy and paste
 vim.opt.clipboard = "unnamedplus"
 
+-- We have a conflict between ToggleTerm and Tmux.nvim with <C-\>. We want ToggleTerm for that mapping.
+vim.keymap.set('n', '<C-\\>', '<cmd>ToggleTerm<CR>', { silent = true })
+
 -- Stylua: Lua formatter
 -- Format with shortcut <leader>st
 vim.keymap.set("n", "<leader>st", function()
