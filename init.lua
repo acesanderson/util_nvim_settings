@@ -13,10 +13,10 @@ vim.opt.conceallevel = 1
 require("lazy-setup")
 
 -- Specific background if you want to set it
-vim.o.background = "dark"
+-- vim.o.background = "dark"
 -- vim.o.background = "light"
 
--- Set the colorscheme
+-- Set the colorscheme -- copy these to a color.lua file
 -- vim.cmd.colorscheme("catppuccin-mocha")
 -- vim.cmd.colorscheme "catppuccin-latte"
 -- vim.cmd.colorscheme "catppuccin-frappe"
@@ -25,7 +25,7 @@ vim.o.background = "dark"
 -- vim.cmd.colorscheme "tokyonight-storm"
 -- vim.cmd.colorscheme("tokyonight-night")
 -- vim.cmd.colorscheme("tokyonight-moon")
-vim.cmd("colorscheme kanagawa")
+-- vim.cmd("colorscheme kanagawa")
 -- vim.cmd("colorscheme gruvbox")
 -- vim.cmd("colorscheme nightfox")
 -- vim.cmd("colorscheme dayfox")
@@ -47,6 +47,14 @@ vim.cmd("colorscheme kanagawa")
 -- vim.cmd("colorscheme monokai")
 -- vim.cmd("colorscheme oceanicnext")
 -- vim.cmd("colorscheme solarized")
+
+-- Set the colorscheme by importing from color.lua -- if it exists!
+local color_file = vim.fn.stdpath("config") .. "/lua/color.lua"
+if vim.fn.filereadable(color_file) == 1 then
+	require("color")
+else
+	vim.cmd.colorscheme("catppuccin-mocha")
+end
 
 -- Open Nvim Tree
 vim.keymap.set("n", "<leader>t", ":NvimTreeFindFileToggle<CR>", { noremap = true, silent = true })
