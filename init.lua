@@ -3,7 +3,19 @@ vim.wo.relativenumber = true
 
 -- Set the leader key
 vim.g.mapleader = " "
+
+-- Set conceal level -- this hides markdown formatting characters
 vim.opt.conceallevel = 1
+
+-- disable wrap
+vim.opt.wrap = false
+
+-- scroll lock
+vim.opt.scrolloff = 999
+
+-- new splits open at the bottom and right
+vim.opt.splitbelow = true
+vim.opt.splitright = true
 
 -- vim.g.rocks = {
 -- 	enabled = false, -- This disables luarocks support completely
