@@ -30,7 +30,7 @@ return {
 		-- List of parsers to ignore
 		ignore_install = {},
 	},
-	config = function(_, opts)
+	config = function()
 		-- Define filetype to parser mapping
 		local parser_mapping = {
 			javascriptreact = { "tsx" }, -- Add this line for JSX files
@@ -46,8 +46,18 @@ return {
 		}
 
 		-- Setup treesitter
-		require("nvim-treesitter.configs").setup(opts)
+		require("nvim-treesitter.configs").setup({
 
+			incremental_selection = {
+				enable = true,
+				keymaps = {
+					init_selection = "<Leader>ss",
+					node_incremental = "<Leader>si",
+					scope_incremental = "<Leader>sc",
+					node_decremental = "<Leader>bd",
+				},
+			},
+		})
 		-- Create autocmd for lazy loading other parsers
 		vim.api.nvim_create_autocmd("FileType", {
 			callback = function()
