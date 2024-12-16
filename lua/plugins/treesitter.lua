@@ -61,15 +61,13 @@ return {
 			},
 			require("nvim-treesitter.configs").setup({
 				textobjects = {
-					textobjects = {
-						swap = {
-							enable = true,
-							swap_next = {
-								["<leader>a"] = "@parameter.inner",
-							},
-							swap_previous = {
-								["<leader>A"] = "@parameter.inner",
-							},
+					swap = {
+						enable = true,
+						swap_next = {
+							["<Leader>a"] = "@parameter.inner",
+						},
+						swap_previous = {
+							["<Leader>A"] = "@parameter.inner",
 						},
 					},
 					select = {
@@ -98,8 +96,8 @@ return {
 						-- mapping query_strings to modes.
 						selection_modes = {
 							["@parameter.outer"] = "v", -- charwise
-							["@function.outer"] = "V", -- linewise
-							["@class.outer"] = "<c-v>", -- blockwise
+							["@function.outer"] = "v", -- charwise
+							["@class.outer"] = "<c-v>", -- charwise
 						},
 						-- If you set this to `true` (default is `false`) then any textobject is
 						-- extended to include preceding or succeeding whitespace. Succeeding
