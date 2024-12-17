@@ -18,7 +18,6 @@ return {
 			vim.cmd("colorscheme kanagawa") -- Set color scheme when loaded
 		end,
 	},
-
 	-- Lazy load Tokyo Night color scheme
 	{
 		"folke/tokyonight.nvim",
@@ -39,6 +38,27 @@ return {
 		cmd = "Gruvbox",
 		config = function()
 			vim.cmd("colorscheme gruvbox")
+		end,
+	},
+	{
+		"sainnhe/gruvbox-material",
+		cmd = "GruvboxMaterial",
+		config = function()
+			vim.cmd("colorscheme gruvbox")
+		end,
+	},
+	{
+		"Mofiqul/vscode.nvim",
+		cmd = "VSCode",
+		config = function()
+			vim.cmd("colorscheme vscode")
+		end,
+	},
+	{
+		"raphamorim/lucario",
+		cmd = "Lucario",
+		config = function()
+			vim.cmd("colorscheme lucario")
 		end,
 	},
 	{
