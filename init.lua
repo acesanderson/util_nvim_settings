@@ -107,7 +107,9 @@ end
 vim.keymap.set("n", "<leader>r", ":lua run_python_file()<CR>", { noremap = true, silent = true })
 
 -- Clipboard settings!
--- OSC 52 uses special escape sequences to copy and paste text to terminal emulator clipboard
+-- Use system clipboard
+vim.opt.clipboard = 'unnamedplus'
+-- OSC 52 uses special escape sequences to copy and paste text to terminal emulator clipboard -- i.e. across SSH
 vim.g.clipboard = {
       name = 'OSC 52',
       copy = {
@@ -119,6 +121,7 @@ vim.g.clipboard = {
         ['*'] = require('vim.ui.clipboard.osc52').paste('*'),
       },
     }
+
 
 -- Stylua: Lua formatter
 -- Format with shortcut <leader>st
