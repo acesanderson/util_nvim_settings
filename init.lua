@@ -8,7 +8,7 @@ vim.g.mapleader = " "
 vim.opt.conceallevel = 1
 
 -- disable wrap
-vim.opt.wrap = false
+-- vim.opt.wrap = false
 
 -- scroll lock
 vim.opt.scrolloff = 999
@@ -37,8 +37,9 @@ require("lazy-setup")
 -- vim.cmd.colorscheme "tokyonight-storm"
 -- vim.cmd.colorscheme("tokyonight-night")
 -- vim.cmd.colorscheme("tokyonight-moon")
--- vim.cmd("colorscheme kanagawa")
+-- vim.cmd("colorscheme kanagawa-dragon")
 -- vim.cmd("colorscheme kanagawa-wave")
+-- vim.cmd("colorscheme kanagawa-lotus")
 -- vim.cmd("colorscheme gruvbox")
 -- vim.cmd("colorscheme nightfox")
 -- vim.cmd("colorscheme dayfox")
