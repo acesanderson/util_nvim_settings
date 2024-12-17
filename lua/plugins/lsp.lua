@@ -10,6 +10,7 @@ return {
 		-- Setup mason first
 		require("mason").setup({})
 
+
 		local lspconfig = require("lspconfig")
 
 		-- Add cmp_nvim_lsp capabilities settings to lspconfig
@@ -46,6 +47,18 @@ return {
 				capabilities = lspconfig_defaults.capabilities,
 			})
 		end
+
+
+		-- Get rid of the annoying 'Undefined global "vim"' error.
+		require('lspconfig').lua_ls.setup({
+		    settings = {
+			Lua = {
+			    diagnostics = {
+				globals = {'vim'}
+			    }
+			}
+		    }
+		})
 
 		-- LSP keybindings (only active when LSP is attached)
 		vim.api.nvim_create_autocmd("LspAttach", {
