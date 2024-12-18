@@ -17,6 +17,8 @@ vim.opt.scrolloff = 999
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 
+
+
 -- vim.g.rocks = {
 -- 	enabled = false, -- This disables luarocks support completely
 -- }
@@ -76,6 +78,8 @@ end
 
 -- Open Nvim Tree
 vim.keymap.set("n", "<leader>t", ":NvimTreeFindFileToggle<CR>", { noremap = true, silent = true })
+require('transparent').clear_prefix('NvimTree')
+
 
 -- Pretty print json
 vim.keymap.set("n", "<leader>fj", ":%!jq .<CR>", { noremap = true, silent = true, desc = "Format JSON" })

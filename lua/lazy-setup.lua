@@ -13,7 +13,7 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 	-- { "bling/vim-bufferline" },
 	{ import = "plugins" },
-        { "xiyaowong/transparent.nvim" },
+        { "xiyaowong/transparent.nvim" }, -- Note: you will need to :TransparentEnable after install
 	-- {
 	-- 	"goolord/alpha-nvim",
 	-- 	dependencies = { "echasnovski/mini.icons" },
