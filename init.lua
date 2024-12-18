@@ -17,56 +17,8 @@ vim.opt.scrolloff = 999
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 
-
-
--- vim.g.rocks = {
--- 	enabled = false, -- This disables luarocks support completely
--- }
-
 -- Lazy loads all our plugins (see lazy-setup.lua)
 require("lazy-setup")
-
--- Set the colorscheme -- paste this in color.lua to set a specific colorscheme
-
--- Specific background if you want to set it
--- vim.o.background = "dark"
--- vim.o.background = "light"
-
--- vim.cmd.colorscheme("catppuccin-mocha")
--- vim.cmd.colorscheme("catppuccin-latte")
--- vim.cmd.colorscheme("catppuccin-frappe")
--- vim.cmd.colorscheme("catppuccin-macchiato")
--- vim.cmd.colorscheme("tokyonight-storm")
--- vim.cmd.colorscheme("tokyonight-night")
--- vim.cmd.colorscheme("tokyonight-moon")
--- vim.cmd.colorscheme("tokyonight-day")
--- vim.cmd("colorscheme kanagawa-dragon")
--- vim.cmd("colorscheme kanagawa-wave")
--- vim.cmd("colorscheme kanagawa-lotus")
--- vim.cmd("colorscheme nightfox")
--- vim.cmd("colorscheme dayfox")
--- vim.cmd("colorscheme dawnfox")
--- vim.cmd("colorscheme duskfox")
--- vim.cmd("colorscheme nordfox")
--- vim.cmd("colorscheme terafox")
--- vim.cmd("colorscheme carbonfox")
--- vim.cmd("colorscheme gruvbox")
--- vim.cmd("colorscheme gruvbox-material")
--- vim.cmd("colorscheme vscode")
--- vim.cmd("colorscheme lucario")
--- vim.cmd("colorscheme melange")
--- vim.cmd("colorscheme sonokai")
--- vim.cmd("colorscheme rose-pine")
--- vim.cmd("colorscheme rose-pine-moon")
--- vim.cmd("colorscheme rose-pine-dawn")
--- vim.cmd("colorscheme oxocarbon")
--- vim.cmd("colorscheme apprentice")
--- vim.cmd("colorscheme dracula")
--- vim.cmd("colorscheme PaperColor")
--- vim.cmd("colorscheme doom-one")
--- vim.cmd("colorscheme monokai")
--- vim.cmd("colorscheme OceanicNext")
--- vim.cmd("colorscheme solarized")
 
 -- Set the colorscheme by importing from color.lua -- if it exists!
 local color_file = vim.fn.stdpath("config") .. "/lua/color.lua"
@@ -79,7 +31,6 @@ end
 -- Open Nvim Tree
 vim.keymap.set("n", "<leader>t", ":NvimTreeFindFileToggle<CR>", { noremap = true, silent = true })
 require('transparent').clear_prefix('NvimTree')
-
 
 -- Pretty print json
 vim.keymap.set("n", "<leader>fj", ":%!jq .<CR>", { noremap = true, silent = true, desc = "Format JSON" })
