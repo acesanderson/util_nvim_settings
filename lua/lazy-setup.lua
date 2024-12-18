@@ -13,6 +13,14 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 	-- { "bling/vim-bufferline" },
 	{ import = "plugins" },
+	{ -- This is entirely to suppress errors we get from noice and transparent.nvim not playing well together
+	    "rcarriga/nvim-notify",
+	    config = function()
+	      require("notify").setup({
+		background_colour = "#000000",
+	      })
+	    end,
+	},
         { "xiyaowong/transparent.nvim" }, -- Note: you will need to :TransparentEnable after install
 	-- {
 	-- 	"goolord/alpha-nvim",

@@ -145,6 +145,6 @@ vim.api.nvim_create_autocmd("BufWritePost", { -- Changed from BufWritePre to Buf
 		vim.cmd("e!") -- reload the file
 	end,
 })
-
+        
 vim.opt.termguicolors = true
 require("bufferline").setup({})
