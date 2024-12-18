@@ -13,6 +13,7 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 	-- { "bling/vim-bufferline" },
 	{ import = "plugins" },
+        { "xiyaowong/transparent.nvim" },
 	-- {
 	-- 	"goolord/alpha-nvim",
 	-- 	dependencies = { "echasnovski/mini.icons" },
