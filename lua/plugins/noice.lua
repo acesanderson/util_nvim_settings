@@ -2,6 +2,11 @@ return {
 	"folke/noice.nvim",
 	event = "VeryLazy",
 	opts = {
+		views = {
+			notify = {
+				timeout = 500, --.5 seconds
+			},
+		},
 		-- Here we're moving the Noice configuration into the opts table
 		lsp = {
 			-- This section enhances how LSP documentation appears in your editor

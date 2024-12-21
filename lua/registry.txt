@@ -1,3 +1,6 @@
+-- This is the set of color settings that is kept in version control
+-- `cat registry.txt > color.lua` to create a local version you can use to set colorschemes
+
 -- Specific background if you want to set it
 -- vim.o.background = "dark"
 -- vim.o.background = "light"
