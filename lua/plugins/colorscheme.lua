@@ -9,7 +9,13 @@ return {
 			vim.cmd("colorscheme catppuccin") -- Set color scheme when loaded
 		end,
 	},
-
+	{
+		"datsfilipe/vesper.nvim",
+		cmd = "Vesper",
+		config = function()
+			vim.cmd("colorscheme kanagawa") -- Set color scheme when loaded
+		end,
+	},
 	-- Lazy load Kanagawa color scheme
 	{
 		"rebelot/kanagawa.nvim",
