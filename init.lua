@@ -30,7 +30,7 @@ end
 
 -- Open Nvim Tree
 vim.keymap.set("n", "<leader>t", ":NvimTreeFindFileToggle<CR>", { noremap = true, silent = true })
-require('transparent').clear_prefix('NvimTree')
+require("transparent").clear_prefix("NvimTree")
 
 -- Pretty print json
 vim.keymap.set("n", "<leader>fj", ":%!jq .<CR>", { noremap = true, silent = true, desc = "Format JSON" })
@@ -70,17 +70,17 @@ vim.keymap.set("n", "<leader>r", ":lua run_python_file()<CR>", { noremap = true,
 vim.opt.clipboard = "unnamedplus"
 
 -- OSC 52 uses special escape sequences to copy and paste text to terminal emulator clipboard -- i.e. across SSH
-vim.g.clipboard = {
-	name = "OSC 52",
-	copy = {
-		["+"] = require("vim.ui.clipboard.osc52").copy("+"),
-		["*"] = require("vim.ui.clipboard.osc52").copy("*"),
-	},
-	-- paste = {
-	--   ['+'] = require('vim.ui.clipboard.osc52').paste('+'),
-	--   ['*'] = require('vim.ui.clipboard.osc52').paste('*'),
-	-- },
-}
+-- vim.g.clipboard = {
+-- 	name = "OSC 52",
+-- 	copy = {
+-- 		["+"] = require("vim.ui.clipboard.osc52").copy("+"),
+-- 		["*"] = require("vim.ui.clipboard.osc52").copy("*"),
+-- 	},
+-- paste = {
+--   ['+'] = require('vim.ui.clipboard.osc52').paste('+'),
+--   ['*'] = require('vim.ui.clipboard.osc52').paste('*'),
+-- },
+-- }
 
 -- Stylua: Lua formatter
 -- Format with shortcut <leader>st
@@ -96,6 +96,6 @@ vim.api.nvim_create_autocmd("BufWritePost", { -- Changed from BufWritePre to Buf
 		vim.cmd("e!") -- reload the file
 	end,
 })
-        
+
 vim.opt.termguicolors = true
 require("bufferline").setup({})

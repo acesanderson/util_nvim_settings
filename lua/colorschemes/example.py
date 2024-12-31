@@ -59,15 +59,15 @@ class WilliamMorrisGenerator:
         """Generates a new pattern based on the configured style."""
         match self.style:
             case PatternStyle.FLORAL:
-                return self._generate_floral()
+                return "yeahhhh"
             case PatternStyle.AVIARY:
-                return self._generate_aviary()
+                return "yeahhhh"
             case _:
-                return self._generate_botanical()
+                return "yeahhhh"
 
-    def _generate_floral(self) -> str:
+    def _generate_floral(self) -> list[str]:
         flowers = ["🌸", "🌺", "🌹"]  # List of flower emojis
-        return f"Floral pattern with {len(self.elements)} elements"
+        return flowers
 
 
 if __name__ == "__main__":

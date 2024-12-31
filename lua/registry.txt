@@ -12,9 +12,11 @@
 -- require('colorschemes.picabia').setup()
 
 -- LAZY COLORSCHEMES
+
 -- vim.cmd.colorscheme("catppuccin-latte")
 -- vim.cmd.colorscheme("catppuccin-frappe")
 -- vim.cmd.colorscheme("catppuccin-macchiato")
+-- vim.cmd.colorscheme("catppuccin-mocha")
 -- vim.cmd.colorscheme("tokyonight-storm")
 -- vim.cmd.colorscheme("tokyonight-night")
 -- vim.cmd.colorscheme("tokyonight-moon")
