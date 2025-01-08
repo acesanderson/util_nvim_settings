@@ -10,7 +10,6 @@ return {
 		-- Setup mason first
 		require("mason").setup({})
 
-
 		local lspconfig = require("lspconfig")
 
 		-- Add cmp_nvim_lsp capabilities settings to lspconfig
@@ -25,11 +24,11 @@ return {
 		local servers = {
 			pyright = { filetypes = { "python" } },
 			lua_ls = { filetypes = { "lua" } },
-			bashls = { filetypes = { "sh", "bash" } },
-			html = { filetypes = { "html" } },
-			dockerls = { filetypes = { "dockerfile" } },
-			jsonls = { filetypes = { "json", "jsonc" } },
-			cssls = { filetypes = { "css", "scss", "less" } },
+			-- bashls = { filetypes = { "sh", "bash" } },
+			-- html = { filetypes = { "html" } },
+			-- dockerls = { filetypes = { "dockerfile" } },
+			-- jsonls = { filetypes = { "json", "jsonc" } },
+			-- cssls = { filetypes = { "css", "scss", "less" } },
 			yamlls = { filetypes = { "yaml", "yml" } },
 			sqlls = { filetypes = { "sql" } },
 		}
@@ -48,16 +47,15 @@ return {
 			})
 		end
 
-
 		-- Get rid of the annoying 'Undefined global "vim"' error.
-		require('lspconfig').lua_ls.setup({
-		    settings = {
-			Lua = {
-			    diagnostics = {
-				globals = {'vim'}
-			    }
-			}
-		    }
+		require("lspconfig").lua_ls.setup({
+			settings = {
+				Lua = {
+					diagnostics = {
+						globals = { "vim" },
+					},
+				},
+			},
 		})
 
 		-- LSP keybindings (only active when LSP is attached)

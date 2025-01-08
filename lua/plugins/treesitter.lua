@@ -20,6 +20,8 @@ return {
 			"javascript",
 			"json",
 			"jsonc",
+			"bash",
+			"regex",
 		},
 		-- Automatically install parsers when entering buffer
 		auto_install = false,
@@ -36,8 +38,6 @@ return {
 			javascriptreact = { "tsx" }, -- Add this line for JSX files
 			typescript = { "typescript", "tsx" },
 			typescriptreact = { "tsx" },
-			bash = { "bash" },
-			regex = { "regex" },
 			yaml = { "yaml" },
 			html = { "html" },
 			css = { "css" },
