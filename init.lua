@@ -37,11 +37,12 @@ require("transparent").clear_prefix("NvimTree")
 
 -- Pretty print json
 vim.keymap.set("n", "<leader>fj", ":%!jq .<CR>", { noremap = true, silent = true, desc = "Format JSON" })
-
 -- Open a new line below the current line
 vim.api.nvim_set_keymap("n", "<Leader>o", "mpo<Esc>p", { noremap = true, silent = true })
 -- Open a new line above the current line
 vim.api.nvim_set_keymap("n", "<Leader>O", "mpO<Esc>`p", { noremap = true, silent = true })
+-- IF name equals main boilerplate
+vim.keymap.set("n", "<leader>ifm", 'iif __name__ == "__main__":<CR>', { noremap = true, silent = true })
 
 -- Create abbreviation for substitute command
 -- This allows us to effectively use "very magic" (i.e. perlesque regex) in find/replace in command mode
