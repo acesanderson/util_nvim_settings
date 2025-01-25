@@ -29,7 +29,7 @@ return {
 			-- dockerls = { filetypes = { "dockerfile" } },
 			-- jsonls = { filetypes = { "json", "jsonc" } },
 			-- cssls = { filetypes = { "css", "scss", "less" } },
-			yamlls = { filetypes = { "yaml", "yml" } },
+			-- yamlls = { filetypes = { "yaml", "yml" } },
 			sqlls = { filetypes = { "sql" } },
 		}
 
