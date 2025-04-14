@@ -4,6 +4,10 @@ vim.wo.relativenumber = true
 -- Set the leader key
 vim.g.mapleader = " "
 
+-- Choose the Github copilot model (IF AND WHEN GH ALLOWS MORE THEN ONE CODE COMPLETION MODEL)
+-- vim.g.copilot_settings = { selectedCompletionModel = "Claude 3.7 Sonnet" }
+--vim.g.copilot_integration_id = "vscode-chat"
+
 -- Set conceal level -- this hides markdown formatting characters
 vim.opt.conceallevel = 1
 

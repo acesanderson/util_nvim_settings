@@ -7,6 +7,8 @@ from enum import Enum
 
 # This is a sage-colored comment describing our Victorian pattern generator
 class PatternStyle(Enum):
+    """An enumeration of pattern styles inspired by William Morris."""
+
     FLORAL = "floral"
     AVIARY = "aviary"
     BOTANICAL = "botanical"
@@ -67,6 +69,7 @@ class WilliamMorrisGenerator:
 
     def _generate_floral(self) -> list[str]:
         flowers = ["🌸", "🌺", "🌹"]  # List of flower emojis
+        # Generate floral pattern
         return flowers
 
 
