@@ -14,8 +14,8 @@ vim.opt.conceallevel = 1
 -- disable wrap
 -- vim.opt.wrap = false
 
--- Temporatry debugging setup for Mason issues
-vim.lsp.set_log_level("debug")
+-- Our log level -- we had debug, which filled up the log file with too much information
+vim.lsp.set_log_level("warn")  -- or "error" for even less logging
 
 -- scroll lock
 vim.opt.scrolloff = 999
