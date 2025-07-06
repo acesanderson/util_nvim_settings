@@ -26,8 +26,8 @@ return {
 			sqlls = { filetypes = { "sql" } },
 		}
 
-		-- Setup mason-lspconfig with ty and ruff included in ensure_installed
-		local ensure_installed = vim.list_extend(vim.tbl_keys(servers), {"ty", "ruff"})
+		-- Setup mason-lspconfig with python servers included in ensure_installed
+		local ensure_installed = vim.list_extend(vim.tbl_keys(servers), {"ty", "ruff", "pyright"})
 		require("mason-lspconfig").setup({
 			ensure_installed = ensure_installed,
 			automatic_installation = false,
@@ -68,7 +68,23 @@ return {
 					}
 				end
 
-				-- Setup Ty
+				-- Setup Pyright for navigation and completions
+				require("lspconfig").pyright.setup({
+					capabilities = lspconfig_defaults.capabilities,
+					settings = {
+						python = {
+							analysis = {
+								-- Disable Pyright's type checking since Ty handles that
+								typeCheckingMode = "off",
+								-- Keep other useful features
+								autoSearchPaths = true,
+								useLibraryCodeForTypes = true,
+							}
+						}
+					}
+				})
+
+				-- Setup Ty for fast type checking
 				require('lspconfig').ty.setup({
 					capabilities = lspconfig_defaults.capabilities,
 				})

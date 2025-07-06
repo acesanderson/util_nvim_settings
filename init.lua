@@ -14,6 +14,18 @@ vim.opt.conceallevel = 1
 -- disable wrap
 -- vim.opt.wrap = false
 
+-- Better folding
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+vim.opt.foldenable = false
+
+-- Quick diagnostic viewing
+vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, { desc = "Show diagnostic" })
+
+-- Navigate diagnostics
+vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Next diagnostic" })
+vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Previous diagnostic" })
+
 -- Our log level -- we had debug, which filled up the log file with too much information
 vim.lsp.set_log_level("warn")  -- or "error" for even less logging
 
