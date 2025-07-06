@@ -9,9 +9,7 @@ return {
 	config = function()
 		-- Setup mason first
 		require("mason").setup({})
-
 		local lspconfig = require("lspconfig")
-
 		-- Add cmp_nvim_lsp capabilities settings to lspconfig
 		local lspconfig_defaults = require("lspconfig").util.default_config
 		lspconfig_defaults.capabilities = vim.tbl_deep_extend(
@@ -19,10 +17,10 @@ return {
 			lspconfig_defaults.capabilities,
 			require("cmp_nvim_lsp").default_capabilities()
 		)
-
 		-- Configure servers with their specific filetypes
 		local servers = {
 			pyright = { filetypes = { "python" } },
+			ruff = { filetypes = { "python" } }, -- Added Ruff
 			lua_ls = { filetypes = { "lua" } },
 			-- bashls = { filetypes = { "sh", "bash" } },
 			-- html = { filetypes = { "html" } },
@@ -32,13 +30,11 @@ return {
 			yamlls = { filetypes = { "yaml", "yml" } },
 			sqlls = { filetypes = { "sql" } },
 		}
-
 		-- Setup mason-lspconfig
 		require("mason-lspconfig").setup({
 			ensure_installed = vim.tbl_keys(servers),
 			automatic_installation = false,
 		})
-
 		-- Setup each LSP server
 		for server, config in pairs(servers) do
 			lspconfig[server].setup({
@@ -46,7 +42,19 @@ return {
 				capabilities = lspconfig_defaults.capabilities,
 			})
 		end
-
+		
+		-- Configure Ruff to work alongside Pyright
+		require("lspconfig").ruff.setup({
+			filetypes = { "python" },
+			capabilities = lspconfig_defaults.capabilities,
+			init_options = {
+				settings = {
+					-- Disable Ruff's hover since Pyright handles that better
+					hover = false,
+				}
+			}
+		})
+		
 		-- Get rid of the annoying 'Undefined global "vim"' error.
 		require("lspconfig").lua_ls.setup({
 			settings = {
@@ -57,13 +65,20 @@ return {
 				},
 			},
 		})
-
+		
+		-- Auto-format Python files with Ruff on save
+		vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+			pattern = "*.py",
+			callback = function()
+				vim.lsp.buf.format({ async = false })
+			end,
+		})
+		
 		-- LSP keybindings (only active when LSP is attached)
 		vim.api.nvim_create_autocmd("LspAttach", {
 			desc = "LSP actions",
 			callback = function(event)
 				local opts = { buffer = event.buf }
-
 				vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
 				vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
 				vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
