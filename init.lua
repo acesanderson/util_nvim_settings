@@ -5,8 +5,8 @@ vim.wo.relativenumber = true
 vim.g.mapleader = " "
 
 -- Choose the Github copilot model (IF AND WHEN GH ALLOWS MORE THEN ONE CODE COMPLETION MODEL)
--- vim.g.copilot_settings = { selectedCompletionModel = "Claude 3.7 Sonnet" }
---vim.g.copilot_integration_id = "vscode-chat"
+vim.g.copilot_settings = { selectedCompletionModel = "GPT-4.1" }
+vim.g.copilot_integration_id = "vscode-chat"
 
 -- Set conceal level -- this hides markdown formatting characters
 vim.opt.conceallevel = 1
