@@ -16,7 +16,7 @@ vim.opt.clipboard = "unnamedplus"
 vim.opt.termguicolors = true
 
 -- Set lower LSP log level
-vim.lsp.set_log_level("warn")
+vim.lsp.set_log_level("error")
 
 -- Optional Copilot setting placeholders
 -- vim.g.copilot_settings = { selectedCompletionModel = "Claude 3.7 Sonnet" }
