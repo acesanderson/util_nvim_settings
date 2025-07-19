@@ -9,6 +9,7 @@ from enum import Enum
 class PatternStyle(Enum):
     """An enumeration of pattern styles inspired by William Morris."""
 
+    # Enum members representing different styles
     FLORAL = "floral"
     AVIARY = "aviary"
     BOTANICAL = "botanical"
