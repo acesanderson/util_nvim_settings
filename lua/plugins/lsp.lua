@@ -10,7 +10,8 @@ return {
 		-- Setup mason first
 		require("mason").setup({})
 		local lspconfig = require("lspconfig")
-
+		-- Ensure Python is available in the environment and all servers are referencing the same Python version / venv
+		vim.env.PYTHONPATH = vim.fn.getcwd() .. ":" .. (vim.env.PYTHONPATH or "")
 		-- Add cmp_nvim_lsp capabilities settings to lspconfig
 		local lspconfig_defaults = require("lspconfig").util.default_config
 		lspconfig_defaults.capabilities = vim.tbl_deep_extend(
@@ -18,21 +19,18 @@ return {
 			lspconfig_defaults.capabilities,
 			require("cmp_nvim_lsp").default_capabilities()
 		)
-
 		-- Configure standard servers (non-Python)
 		local servers = {
 			lua_ls = { filetypes = { "lua" } },
 			yamlls = { filetypes = { "yaml", "yml" } },
 			sqlls = { filetypes = { "sql" } },
 		}
-
-		-- Setup mason-lspconfig with python servers included in ensure_installed
-		local ensure_installed = vim.list_extend(vim.tbl_keys(servers), { "ruff", "pyright" })
+		-- Setup mason-lspconfig with python servers (using basedpyright instead of pyright)
+		local ensure_installed = vim.list_extend(vim.tbl_keys(servers), { "ruff", "basedpyright" })
 		require("mason-lspconfig").setup({
 			ensure_installed = ensure_installed,
 			automatic_installation = false,
 		})
-
 		-- Setup standard (non-Python) LSP servers immediately
 		for server, config in pairs(servers) do
 			lspconfig[server].setup({
@@ -40,56 +38,49 @@ return {
 				capabilities = lspconfig_defaults.capabilities,
 			})
 		end
-
-		-- Setup Python LSPs immediately but with filetype restriction
-		-- Add custom configuration for Ty
-		local configs = require("lspconfig.configs")
-		if not configs.ty then
-			configs.ty = {
-				default_config = {
-					cmd = { "ty", "server" },
-					filetypes = { "python" },
-					root_dir = function(fname)
-						return require("lspconfig.util").find_git_ancestor(fname) or vim.fn.getcwd()
-					end,
-					settings = {},
-				},
-			}
-		end
-
-		-- Setup Pyright for navigation and completions
-		require("lspconfig").pyright.setup({
+		-- Setup basedpyright with type checking ENABLED
+		-- Setup basedpyright with type checking ENABLED
+		require("lspconfig").basedpyright.setup({
 			capabilities = lspconfig_defaults.capabilities,
 			settings = {
-				python = {
+				basedpyright = {
 					analysis = {
-						-- Disable Pyright's type checking since Ty handles that
-						typeCheckingMode = "off",
-						-- Keep other useful features
+						-- ENABLE type checking (this was previously "off")
+						typeCheckingMode = "standard", -- "basic", "standard", "strict", "recommended", or "all"
 						autoSearchPaths = true,
 						useLibraryCodeForTypes = true,
+						-- Suppress missing type stub warnings for packages without .pyi files
+						reportMissingTypeStubs = false,
 					},
 				},
 			},
 		})
-
-		-- Setup Ty for fast type checking
-		require("lspconfig").ty.setup({
-			capabilities = lspconfig_defaults.capabilities,
-		})
-
-		-- Setup Ruff
+		-- require("lspconfig").basedpyright.setup({
+		-- 	capabilities = lspconfig_defaults.capabilities,
+		-- 	settings = {
+		-- 		python = {
+		-- 			analysis = {
+		-- 				-- ENABLE type checking (this was previously "off")
+		-- 				typeCheckingMode = "standard", -- "basic", "standard", "strict", "recommended", or "all"
+		-- 				autoSearchPaths = true,
+		-- 				useLibraryCodeForTypes = true,
+		-- 				-- Suppress missing type stub warnings for packages without .pyi files
+		-- 				reportMissingTypeStubs = false,
+		-- 			},
+		-- 		},
+		-- 	},
+		-- })
+		-- Setup Ruff (unchanged)
 		require("lspconfig").ruff.setup({
 			filetypes = { "python" },
 			capabilities = lspconfig_defaults.capabilities,
 			init_options = {
 				settings = {
-					-- Let Ty handle hover, Ruff focuses on linting/formatting
+					-- Let basedpyright handle hover, Ruff focuses on linting/formatting
 					hover = false,
 				},
 			},
 		})
-
 		-- Get rid of the annoying 'Undefined global "vim"' error.
 		require("lspconfig").lua_ls.setup({
 			settings = {
@@ -100,7 +91,6 @@ return {
 				},
 			},
 		})
-
 		-- Auto-format Python files with Ruff on save
 		vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 			pattern = "*.py",
@@ -108,7 +98,6 @@ return {
 				vim.lsp.buf.format({ async = false })
 			end,
 		})
-
 		-- LSP keybindings (only active when LSP is attached)
 		vim.api.nvim_create_autocmd("LspAttach", {
 			desc = "LSP actions",
