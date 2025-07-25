@@ -78,6 +78,9 @@ return {
 				settings = {
 					-- Let basedpyright handle hover, Ruff focuses on linting/formatting
 					hover = false,
+					lint = {
+						ignore = { "E401" },
+					},
 				},
 			},
 		})
