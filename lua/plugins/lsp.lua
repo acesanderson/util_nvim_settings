@@ -78,6 +78,7 @@ return {
 				settings = {
 					-- Let basedpyright handle hover, Ruff focuses on linting/formatting
 					hover = false,
+					args = { "--ignore=E401" }, -- Ignore E401 (multiple imports on one line)
 				},
 			},
 		})
