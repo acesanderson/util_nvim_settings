@@ -16,6 +16,16 @@ return {
 			vim.cmd("colorscheme kanagawa") -- Set color scheme when loaded
 		end,
 	},
+	{
+		"neanias/everforest-nvim",
+		version = false,
+		lazy = false,
+		priority = 1000, -- make sure to load this before all the other start plugins
+		-- Optional; default configuration will be used if setup isn't called.
+		config = function()
+			vim.cmd("colorscheme everforest") -- Set color scheme when loaded
+		end,
+	},
 	-- Lazy load Kanagawa color scheme
 	{
 		"rebelot/kanagawa.nvim",

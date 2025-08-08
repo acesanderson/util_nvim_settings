@@ -79,7 +79,7 @@ return {
 					-- Let basedpyright handle hover, Ruff focuses on linting/formatting
 					hover = false,
 					lint = {
-						ignore = { "E401" },
+						ignore = { "E401", "PERF203" }, -- Ignore "multiple imports on one line" error, and "try/except" performance warning
 					},
 				},
 			},
