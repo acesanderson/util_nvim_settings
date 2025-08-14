@@ -1,15 +1,5 @@
-Looking at your Neovim configuration, you've built a comprehensive IDE-like setup with many modern features. Here's a breakdown of all the functionalities you've added:
-
-## Core Editor Enhancements
-- **Line numbers**: Both absolute and relative line numbering enabled
-- **Leader key**: Set to space (` `) for custom keybindings
-- **Clipboard integration**: Yanking automatically copies to system clipboard
-- **Split behavior**: New splits open at bottom and right (more intuitive)
-- **Scroll lock**: Keeps cursor centered with `scrolloff = 999`
-- **Conceal level**: Hides markdown formatting characters for cleaner display
-
 ## Plugin Management
-- **Lazy.nvim**: Modern plugin manager with lazy loading for better performance
+- **Lazy.nvim**: Modern plugin manager with lazy loading
 - **Performance optimizations**: Caching enabled, disabled unused built-in plugins
 
 ## Language Support & Development
