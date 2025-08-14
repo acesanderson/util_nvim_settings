@@ -82,5 +82,3 @@ My neovim configs as of 2025-08-13. Prioritize python development.
 - Conditional plugin loading (e.g., nvim-tree disabled in Obsidian)
 - LSP log level set to "error"
 - Disabled default Neovim plugins (gzip, netrw, etc.)
-
-The configuration emphasizes Python development workflow while maintaining flexibility for other languages and providing extensive aesthetic customization options.
