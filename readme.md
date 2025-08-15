@@ -1,67 +1,84 @@
-Looking at your Neovim configuration, you've built a comprehensive IDE-like setup with many modern features. Here's a breakdown of all the functionalities you've added:
+My neovim configs as of 2025-08-13. Prioritize python development.
 
-## Core Editor Enhancements
-- **Line numbers**: Both absolute and relative line numbering enabled
-- **Leader key**: Set to space (` `) for custom keybindings
-- **Clipboard integration**: Yanking automatically copies to system clipboard
-- **Split behavior**: New splits open at bottom and right (more intuitive)
-- **Scroll lock**: Keeps cursor centered with `scrolloff = 999`
-- **Conceal level**: Hides markdown formatting characters for cleaner display
+## Core Setup
 
-## Plugin Management
-- **Lazy.nvim**: Modern plugin manager with lazy loading for better performance
-- **Performance optimizations**: Caching enabled, disabled unused built-in plugins
+- **Leader key**: Space (`" "`) for both global and local leader
+- **Plugin manager**: Lazy.nvim with performance optimizations (caching, disabled default plugins)
+- **Python integration**: Automatic detection of `.venv/bin/python` in project directories via `env.lua`
 
-## Language Support & Development
-- **LSP (Language Server Protocol)**: 
-  - Mason for managing language servers
-  - Lua, YAML, SQL language servers
-  - Python support with Ty (type checking) and Ruff (linting/formatting)
-  - Auto-formatting Python files on save
-- **Treesitter**: Advanced syntax highlighting and code understanding
-- **Autocompletion**: nvim-cmp with LSP integration
-- **GitHub Copilot**: AI-powered code completion
+## Key Customizations
 
-## File Management & Navigation
-- **Telescope**: Fuzzy finder for files, grep, buffers, and help
-- **nvim-tree**: File explorer with toggle functionality (`<leader>t`)
-- **Buffer management**: Bufferline for tab-like buffer navigation
+### Editor Options
+- Line numbers with relative numbering
+- Treesitter-based folding (disabled by default)
+- Center cursor with `scrolloff = 999`
+- System clipboard integration
+- Smart split behavior (below/right)
+- Concealment level 1 for cleaner markdown display
 
-## Terminal Integration
-- **Toggleterm**: Floating terminal with `Ctrl+\` toggle
-- **Python runner**: Custom function to run Python files in floating terminal (`<leader>r`)
-- **Tmux integration**: Seamless navigation between Neovim and tmux panes
+### Language Server Protocol (LSP)
+- **Mason**: Automatic LSP server management
+- **Python**: BasedPyright (type checking enabled) + Ruff (linting/formatting)
+- **Other languages**: lua_ls, yamlls, sqlls
+- **Auto-formatting**: Python files formatted with Ruff on save
+- **Type checking**: Standard mode with missing type stubs suppressed
 
-## UI & Visual Enhancements
-- **Multiple colorschemes**: 20+ themes including Catppuccin (default), Kanagawa, Tokyo Night, Gruvbox, Rose Pine, etc.
-- **Custom colorschemes**: Three handcrafted themes (Morris, Picabia, Morris-botanical) inspired by art
-- **Transparent background**: Optional transparency support
-- **Rainbow delimiters**: Colored bracket matching
-- **Noice.nvim**: Enhanced UI for messages and LSP documentation
-- **Which-key**: Shows available keybindings as you type
+### Completion & UI
+- **nvim-cmp**: LSP-based completion
+- **Noice**: Enhanced UI for LSP documentation and notifications (0.5s timeout)
+- **Which-key**: Keybinding hints
+- **Bufferline**: Tab-like buffer management
+- **Transparent**: Background transparency support
 
-## Productivity Features
-- **JSON formatting**: Pretty print JSON with `<leader>fj`
-- **Line insertion**: Insert new lines above/below without entering insert mode
-- **Python boilerplate**: Quick `if __name__ == "__main__":` insertion (`<leader>ifm`)
-- **Regex enhancement**: "Very magic" mode for find/replace operations
-- **Lua formatting**: Stylua integration with auto-format on save and manual trigger (`<leader>st`)
+### File Management
+- **Nvim-tree**: File explorer (disabled in Obsidian directories)
+- **Telescope**: Fuzzy finder for files, grep, buffers, help
+- **Obsidian**: Vault integration when `OBSIDIAN_PATH` environment variable is set
 
-## Database Integration
-- **vim-dadbod**: Database interface for SQL queries and management
+### Terminal & Tools
+- **Toggleterm**: Floating terminal with `Ctrl+\`
+- **Tmux navigator**: Seamless tmux pane navigation
+- **Dadbod**: Database UI and completion
 
-## Obsidian Integration
-- **Conditional loading**: Only loads when working in your Obsidian vault (via `OBSIDIAN_PATH` environment variable)
-- **Smart file management**: Disables nvim-tree when in Obsidian directory
+### Custom Commands
+- **DocsGenerate**: Generates Python docstrings using external `docs` command
+- **DocsGenerateAsync**: Async version of docstring generation
+- **DocsShowContext**: Debug info for docstring generation
+- **Docs**: Shorthand alias
 
-## Key Bindings Summary
+### Key Mappings
+- `<leader>d`: Show LSP diagnostics
 - `<leader>t`: Toggle file tree
-- `<leader>ff`: Find files
-- `<leader>fg`: Live grep
-- `<leader>fb`: Browse buffers
-- `<leader>fh`: Help tags
-- `<leader>r`: Run Python file
-- `<leader>fj`: Format JSON
-- `<leader>st`: Format Lua with Stylua
-- `Ctrl+\`: Toggle terminal
-- Various LSP bindings (K for hover, gd for definition, etc.)
+- `<leader>r`: Run current Python file in floating terminal
+- `<leader>fj`: Format JSON with jq
+- `<leader>st`: Format Lua with stylua
+- `<leader>vp`: Show Python provider path
+- Standard LSP bindings (hover, go-to-definition, references, etc.)
+
+### Autocommands
+- **Lua formatting**: Auto-format with stylua on save
+- **Substitute shortcuts**: Very magic mode abbreviations (`%s/` → `%s/\v`)
+- **Rainbow delimiters**: Colorized parentheses/brackets with colorscheme adaptation
+
+### Syntax & Highlighting
+- **Treesitter**: Syntax highlighting for Lua, Python, JavaScript, JSON, Bash, Markdown
+- **Incremental selection**: Expand/contract selections with `<Leader>ss/si/sc/bd`
+- **Text objects**: Function/class selection (`af/if/ac/ic`)
+- **Parameter swapping**: `<Leader>a/A` for function arguments
+
+### Color Schemes
+- **Default**: Everforest
+- **Available**: 20+ themes including Catppuccin, Tokyo Night, Gruvbox, Rose Pine
+- **Custom schemes**: Three William Morris-inspired themes (morris, morris-botanical, picabia)
+- **Theme management**: Lazy-loaded colorschemes with fallback to Catppuccin
+
+### Development Tools
+- **GitHub Copilot**: Code completion for multiple file types
+- **Python execution**: Direct file running with `<leader>r`
+- **Project root detection**: Smart detection using pyproject.toml, setup.py, .git, etc.
+
+### Performance Optimizations
+- Lazy loading for most plugins
+- Conditional plugin loading (e.g., nvim-tree disabled in Obsidian)
+- LSP log level set to "error"
+- Disabled default Neovim plugins (gzip, netrw, etc.)

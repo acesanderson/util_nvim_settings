@@ -24,6 +24,23 @@ map("n", "<leader>ifm", 'iif __name__ == "__main__":<CR>', opts)
 -- Run Python file (function lives in tools.lua)
 map("n", "<leader>r", ":lua run_python_file()<CR>", opts)
 
+-- Navigate by class / function using Treesitter
+map("n", "]f", function()
+    require("nvim-treesitter.textobjects.move").goto_next_start("@function.outer")
+end, { desc = "Next function" })
+
+map("n", "[f", function()
+    require("nvim-treesitter.textobjects.move").goto_previous_start("@function.outer")
+end, { desc = "Previous function" })
+
+map("n", "]c", function()
+    require("nvim-treesitter.textobjects.move").goto_next_start("@class.outer")
+end, { desc = "Next class" })
+
+map("n", "[c", function()
+    require("nvim-treesitter.textobjects.move").goto_previous_start("@class.outer")
+end, { desc = "Previous class" })
+
 -- Stylua format
 map("n", "<leader>st", function()
 	vim.fn.system("stylua " .. vim.fn.expand("%"))
